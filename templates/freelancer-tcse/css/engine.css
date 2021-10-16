@@ -697,7 +697,7 @@ pre code { display: block; padding: 0.5em; background: #f9fafa; border: 1px soli
 	.dle-alert, .dle-confirm, .dle-promt { padding: 20px 1em !important; }
 
 /* --- Поля форм --- */
-select, textarea, input[type="text"], input[type="password"], input[type="file"],
+/*select, textarea, input[type="text"], input[type="password"], input[type="file"],
 input[type="datetime"], input[type="datetime-local"], input[type="date"],
 input[type="month"], input[type="time"], input[type="week"], input[type="number"],
 input[type="email"], input[type="url"], input[type="search"], input[type="tel"],
@@ -742,7 +742,7 @@ input[type="color"] {
 	input[type="file"], input[type="image"] { padding: 0; border-width: 0; background-color: transparent; }
 	.wide, .bb-editor textarea, .ui-dialog textarea, select#category, .timezoneselect, .quick-edit-text { width: 100% !important; }
 	#searchuser, #searchinput { width: 100% !important; margin-bottom: 10px; }
-
+*/
 	/* Настройка стандартной капчи */
 	.form_submit .c-captcha { float: right; }
 	.c-captcha { position: relative; }
@@ -770,7 +770,7 @@ input[type="color"] {
 	.dle-captcha > input { float: left; width: 130px; }
 
 /* --- Настройка кнопок --- */
-.btn, .bbcodes, .btn-border  {
+/*.btn, .bbcodes, .btn-border  {
     display: inline-block;
     font-weight: 400;
     text-align: center;
@@ -806,7 +806,7 @@ input[type="color"] {
 	}
 	.btn-border:hover {
 		box-shadow: inset 0 0 0 2px rgba(51,148,230,0.2); -webkit-box-shadow: inset 0 0 0 2px rgba(51,148,230,0.2);
-	}
+	}*/
 
 /*---Дополнительные поля---*/
 table.xfields {

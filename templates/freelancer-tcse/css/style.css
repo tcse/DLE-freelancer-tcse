@@ -1,84 +1,9 @@
 /* Template created by tcse-cms.com | Author: Vitaly V. Chuyakov | URL: http://tcse-cms.com */
 
-/* Переход на flex систему разметки в BS4 - фикс для вставки контента DLE */
-#dle-content {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-}
 
 /* Изменения между версиями движка https://dle-news.ru/extras/diffs/ */
 .instagram-media, .twitter-tweet {display: inline-block !important;}
 
-
-/* ============================================================== */
-/* многоуровневое меню для DLE тега {catmenu} */
-/* ============================================================== */
-#primary_nav_wrap {
-    margin-top: 15px; 
-}
-#primary_nav_wrap ul {
-    list-style: none;
-    position: relative;
-    float: left;
-    margin: 0;
-    padding: 10px;
-}
-#primary_nav_wrap ul a {
-    display: block;
-    color: var(--dark);
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 32px;
-    padding: 0 15px;
-    font-family: var(--font-family-sans-serif);
-}
-#primary_nav_wrap ul a:hover {color: var(--light);}
-#primary_nav_wrap ul:hover {color: var(--light);}
-#primary_nav_wrap ul li {
-    position: relative;
-    float: left;
-    margin: 0;
-    padding: 0;
-}
-#primary_nav_wrap ul li.current-menu-item {
-    background: var(--gray-dark);
-    color: var(--light);
-}
-#primary_nav_wrap ul li:hover {
-    background: var(--gray-dark);
-    color: var(--light);
-}
-#primary_nav_wrap ul ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: var(--light);
-    padding: 0;
-    border: solid 1px var(--secondary);
-    z-index: 1500;
-}
-#primary_nav_wrap ul ul li {
-    float: none;
-    width: 260px;
-}
-#primary_nav_wrap ul ul a {
-    line-height: 120%;
-    padding: 10px 15px;
-}
-#primary_nav_wrap ul ul ul {
-    top: 0;
-    left: 100%;
-}
-#primary_nav_wrap ul li:hover > ul {
-    display: block;
-}
 
 
 /* ============================================================== */
@@ -109,41 +34,41 @@
     background-color: transparent;
 }
 .pagination a {
-    color: var(--gray-dark);
+    color: var(--bs-gray-dark);
 }
 .page-link {
-    border: 0px solid var(--gray-dark);
+    border: 0px solid var(--bs-gray-dark);
 }
 li.page-link a,
 li.page-link span {
-    border: 1px solid var(--gray-dark);
+    border: 1px solid var(--bs-gray-dark);
     padding: 10px;
 }
 li.page-link span {
-    background-color: var(--secondary);  
-    color: var(--light);
+    background-color: var(--bs-secondary);  
+    color: var(--bs-light);
 }
 li.page-link span.nav_ext {
     background-color: #f7f7f7;  
-    color: var(--gray-dark);
+    color: var(--bs-gray-dark);
 }
 li.page-link a:hover {
     background-color: transparent;
-    color: var(--secondary);
-    border: 1px solid var(--secondary);
+    color: var(--bs-secondary);
+    border: 1px solid var(--bs-secondary);
 }
 
 li.navigation-prev-link a,
 li.navigation-next-link a {
    background-color: transparent; 
-   color: var(--secondary);
-   border: 1px solid var(--secondary);
+   color: var(--bs-secondary);
+   border: 1px solid var(--bs-secondary);
 }
 li.navigation-prev-link a:hover,
 li.navigation-next-link a:hover {
-   background-color: var(--secondary);
-   color: var(--light);
-   border: 1px solid var(--secondary);
+   background-color: var(--bs-secondary);
+   color: var(--bs-light);
+   border: 1px solid var(--bs-secondary);
 }
 /* ============================================================== */
 /* адаптируем видео проигрыватель */
@@ -169,7 +94,7 @@ li.navigation-next-link a:hover {
 /* ============================================================== */
 table.mobile-table {width: 100%; border: 0px; border-collapse: collapse;}
 table.mobile-table thead {font-weight: bold;}
-table.mobile-table td {padding: 0.6rem 1rem; border-bottom: 1px solid var(--gray);}
+table.mobile-table td {padding: 0.6rem 1rem; border-bottom: 1px solid var(--bs-gray);}
 @media screen and (max-width: 800px) {
   table.mobile-table thead {
     display: none;
@@ -177,7 +102,7 @@ table.mobile-table td {padding: 0.6rem 1rem; border-bottom: 1px solid var(--gray
   table.mobile-table tr {
     display: block;
     margin-bottom: 1rem;
-    border-bottom: 2px solid var(--gray);
+    border-bottom: 2px solid var(--bs-gray);
   }
   table.mobile-table td {
     display: block;
@@ -199,29 +124,6 @@ table.mobile-table td {padding: 0.6rem 1rem; border-bottom: 1px solid var(--gray
     }
 }
 
-/* ============================================================== */
-/* Стили для slick слайдер   */
-/* ============================================================== */
-.multiple-items {
-    position: relative;
-    padding: 0px; // поля между стрелкой и краем слайдера
-}
-.multiple-items .slick-arrow{
-    position: absolute;
-    top: 50%; // выравнивание по вертикали
-    margin: -15px 0 0 0; // корректировка  вертикального выравнивания
-    z-index: 2; // стрелки сверху картинок
-    font-size: 0; // убираем надпись на дефолтной стрелке
-    width: 30px; // ширина стрелки
-    height: 30px; // высота стрелки
-}
-.multiple-items i.fas.fa-arrow-left.slick-arrow {
-    left: -30px; // левая стрелка остается с левой стороны слайдера
-}
-
-.multiple-items i.fas.fa-arrow-right.slick-arrow {
-    right: -30px; // правая стрелка переместилась справа от слайдера
-}
 
 /* ============================================================== */
 /* Дерево комментариев */
