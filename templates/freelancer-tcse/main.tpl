@@ -15,6 +15,9 @@
     <link href="{THEME}/css/engine.css" rel="stylesheet">
     <link href="{THEME}/css/style.css?001" rel="stylesheet">
     <link href="{THEME}/css/custom.css?001" rel="stylesheet">
+    <!-- DLE UniForm -->
+    <link rel="stylesheet" href="/engine/classes/min/index.php?charset=utf-8&amp;f={THEME}/uniform/css/uniform.css&amp;200" />
+    <!-- /DLE UniForm -->
 </head>
 
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="72">
@@ -33,40 +36,33 @@
             </div>
         </div>
     </nav>
-    <header class="text-center text-white bg-primary masthead">
-        <div class="container"><img class="img-fluid d-block mx-auto mb-5" src="{THEME}/assets/img/talik_001.jpg" style="border-radius: 160px;border-style: none;">
-            <h1>Виталий Чуяков</h1>
-            <hr class="star-light">
-            <h2 class="font-weight-light mb-0">Специалист по разработке веб-сайтов.</h2>
-        </div>
-    </header>
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2 class="text-uppercase text-center text-secondary">Портфолио</h2>
-            <hr class="star-dark mb-5">
-            <div class="row">
+    [aviable=main]
+        {include file="custom/main/masthead.tpl"}
+        {include file="custom/main/portfolio.tpl"}
+        {include file="custom/main/about.tpl"}
+    [/aviable]
 
-                {custom category="1-10" template="custom/shortstory/portfolio-item" available="global" navigation="no" from="0" limit="6" order="date" sort="desc" cache="yes"}
+    [aviable=cat]
+        {include file="custom/main/masthead-cat.tpl"}
 
-            </div>
-        </div>
-    </section>
-
-    <section class="text-white bg-primary mb-0" id="about">
-        <div class="container">
-            <h2 class="text-uppercase text-center text-white">Обо мне</h2>
-            <hr class="star-light mb-5">
-            <div class="row">
-                <div class="col-lg-4 ms-auto">
-                    <p class="lead">Разработкой и техническим сопровождением сайтов я занимаюсь с 2006 года.&nbsp; В качестве основной системы управления - DataLife Engine как наиболее понятной для клиентов.</p>
-                </div>
-                <div class="col-lg-4 me-auto">
-                    <p class="lead">От блога до интернет-магазина. Не только соберу сайт под ваши потребности, но и смогу поддерживать проект в будущем.&nbsp; &nbsp;Ваши задачи - мои предложения по их решению.</p>
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <h2 class="text-uppercase text-center text-secondary">
+                {category-title}
+            </h2>
+                <hr class="star-dark mb-5">
+                <div class="row">
+                    {content}
                 </div>
             </div>
-            <div class="text-center mt-4"><a class="btn btn-outline-light btn-xl" role="button" href="#"><i class="fa fa-download me-2"></i><span>Download Now!</span></a></div>
-        </div>
-    </section>
+        </section>
+
+        {include file="custom/main/about.tpl"}
+    [/aviable]
+
+    [not-aviable=main|cat]
+        {content}
+    [/not-aviable]
 
     <section id="contact">
         <div class="container">
@@ -74,7 +70,12 @@
             <hr class="star-dark mb-5">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
+
+                    <div data-uniform-inline='{"formConfig": "contactForm"}'>
+                        <div class="uf-inline-loading"></div>
+                    </div>
+
+                    {* <form id="contactForm" name="sentMessage" novalidate="novalidate">
                         <div class="control-group">
                             <div class="mb-0 form-floating controls pb-2"><input class="form-control" type="text" id="name" required="" placeholder="Ваше имя"><label class="form-label">Имя</label><small class="form-text text-danger help-block"></small></div>
                         </div>
@@ -89,7 +90,7 @@
                         </div>
                         <div id="success"></div>
                         <div><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Отправить</button></div>
-                    </form>
+                    </form> *}
                 </div>
             </div>
         </div>
@@ -131,6 +132,9 @@
     <script src="{THEME}/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="{THEME}/assets/js/freelancer.js"></script>
     <script defer src="{THEME}/js/libs.js"></script>
+    <!-- DLE UniForm -->
+    <script src="/engine/classes/min/index.php?charset=utf-8&amp;f={THEME}/uniform/js/jquery.magnificpopup.min.js,{THEME}/uniform/js/jquery.ladda.min.js,{THEME}/uniform/js/jquery.maskedinput.min.js,{THEME}/uniform/js/jquery.form.min.js,{THEME}/uniform/js/uniform.js&amp;203"></script>
+    <!-- /DLE UniForm -->
     {* Активация JS ПОСЛЕ библиотеки jQuery и код счетчиков, метрик и прочего *}
     {include file="js/javascript.tpl"}
 </body>
