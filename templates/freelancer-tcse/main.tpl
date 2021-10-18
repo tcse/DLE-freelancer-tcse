@@ -21,21 +21,58 @@
 </head>
 
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="72">
+
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-secondary text-uppercase" id="mainNav">
         <div class="container">
+            [aviable=main]
             <a class="navbar-brand" href="#page-top">
                 TCSE
             </a>
+            [/aviable]
+            [not-aviable=main]
+            <a class="navbar-brand" href="/">
+                TCSE
+            </a>
+            [/not-aviable]
             <button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler text-white bg-primary navbar-toggler-right text-uppercase rounded" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
+
+                    [not-aviable=showfull|cat]
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Портфолио</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Обо мне</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Контакты</a></li>
+                    [/not-aviable]
+
+
+                    [aviable=showfull|cat]
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Читать</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Разделы</a></li>
+                    [/aviable]
+
+                    <li class="nav-item mx-0 mx-lg-1">
+                        [aviable=showfull]
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#dle-comments-form">
+                            Комментарии
+                        </a>
+                        [/aviable]
+                        [not-aviable=showfull]
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">
+                            Контакты
+                        </a>
+                        [/not-aviable]
+                    </li>
+                    
+
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#" data-bs-toggle="modal" data-bs-target="#SeachModal">
+                            <i class="fa fa-search fa-fw"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
+
     [aviable=main]
         {include file="custom/main/masthead.tpl"}
         {include file="custom/main/portfolio.tpl"}
@@ -57,13 +94,14 @@
             </div>
         </section>
 
-        {include file="custom/main/about.tpl"}
+        {include file="custom/main/about-menu.tpl"}
     [/aviable]
 
     [not-aviable=main|cat]
         {content}
     [/not-aviable]
 
+    [not-aviable=showfull]
     <section id="contact">
         <div class="container">
             <h2 class="text-uppercase text-center text-secondary mb-0">Напишите мне</h2>
@@ -71,11 +109,11 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
 
-                    <div data-uniform-inline='{"formConfig": "contactForm"}'>
+                    {* <div data-uniform-inline='{"formConfig": "contactForm"}'>
                         <div class="uf-inline-loading"></div>
-                    </div>
+                    </div> *}
 
-                    {* <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
                         <div class="control-group">
                             <div class="mb-0 form-floating controls pb-2"><input class="form-control" type="text" id="name" required="" placeholder="Ваше имя"><label class="form-label">Имя</label><small class="form-text text-danger help-block"></small></div>
                         </div>
@@ -90,11 +128,12 @@
                         </div>
                         <div id="success"></div>
                         <div><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Отправить</button></div>
-                    </form> *}
+                    </form>
                 </div>
             </div>
         </div>
     </section>
+    [/not-aviable]
 
     <footer class="text-center footer">
         <div class="container">
@@ -125,6 +164,9 @@
     </div>
 
     <div class="d-lg-none scroll-to-top position-fixed rounded"><a class="text-center d-block rounded text-white" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+
+    {* Модальные окна *}
+    {include file="custom/modal/searchmodal.tpl"}
 
     {* Bootstrap JavaScript *} 
     {jsfiles} 

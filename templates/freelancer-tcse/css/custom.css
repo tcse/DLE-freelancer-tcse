@@ -1,58 +1,71 @@
 /*Переназначение стилей*/
 body {font-family: Geneva, Arial, Helvetica, sans-serif;}
-a {
-    color: #164194;
-}
-.bg-primary {
-    background-color: #164194 !important;
-}
-.bg-secondary {
-    background-color: #161C2A !important;
-}
-.border-success {
-    border-color: #164194 !important;
-}
-.bg-success {
-    background-color: #164194 !important;
-}
-#mainNav .navbar-nav > li.nav-item > a.nav-link.active {
-    background: #164194;
-}
-.portfolio .portfolio-item .portfolio-item-caption {
-    background-color: #164194c4;
-}
-.btn-primary {
-    background-color: #164194;
-    border-color: #164194;
-}
-.footer {
-    background-color: #161C2A;
-}
+
 hr.star-light::after {
-    background-color: #164194;
+    background-color: color: var(--bs-gray-dark);
 }
 hr.star-light::after, hr.star-dark::after {
     content: "!";
 }
-.copyright a {color: #fff;}
+.copyright a {color: color: var(--bs-light);}
 
 .full-news img {
     max-width: 100%;
     margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 /*---Цитата и скрытый текст---*/
 .scriptcode, .title_quote, .title_spoiler, .text_spoiler {
     padding: 5px;
-    background: #f9fafa;
-    border: 1px solid #dce7e7;overflow: hidden;
+    background: color: var(--bs-gray-dark);
+    border: 1px solid color: var(--bs-gray-dark);
+    overflow: hidden;
 }
 
 .quote {
     padding: 1% 4%;
     margin: 1em 0;
-    border-left: 4px solid #164194;
+    border-left: 4px solid color: var(--bs-gray-dark);
     border-top: 0;
     border-bottom: 0;
     border-right: 0;
     background: none;
 }   
+
+/* Обрезка слайдов под один размер */
+.crop-box-h360 {
+    position: relative;
+    overflow:hidden;
+    min-height: 360px;
+}
+.crop-box-360 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.img-box-360  {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.portfolio .portfolio-item .portfolio-item-caption {
+    z-index: 2;
+}
+/* добавление комментариев*/
+#dle-comments-form .input-group-text {
+    font-size: 2rem;
+}
+
+#dle-comments-list .btn {
+    color: var(--bs-gray-dark);
+}
+#dle-comments-list .btn:hover {
+    color: var(--bs-light);
+}

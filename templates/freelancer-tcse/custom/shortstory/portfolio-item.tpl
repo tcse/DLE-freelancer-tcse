@@ -1,11 +1,11 @@
 <div class="col-md-6 col-lg-4">
-    <a class="d-block mx-auto portfolio-item" href="#portfolio-modal-{news-id}" data-bs-toggle="modal">
+    <a class="d-block mx-auto portfolio-item crop-box-h360" href="#portfolio-modal-{news-id}" data-bs-toggle="modal">
         <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
             <div class="text-center text-white my-auto portfolio-item-caption-content w-100">
                 <i class="fa fa-search-plus fa-3x"></i>
             </div>
         </div>
-        <img class="img-thumbnail img-fluid bg-success border rounded-circle border-success shadow-none" src="{image-1}">
+        <img class="img-thumbnail img-fluid bg-success border rounded-circle border-success shadow-none img-box-360" src="{image-1}">
     </a>
 </div>
 
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="modal-footer pb-5">
-                <a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" href="{full-link}" target="_blank">
+                <a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" href="{full-link}" target="_self">
                     <i class="fa fa-external-link"></i>&nbsp;Подробнее о проекте
                 </a>
             </div>

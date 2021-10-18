@@ -1,42 +1,45 @@
-[newscount=1,8,15]
-        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-            <div class="card bg-dark text-white w-100 mb-3 rounded-0 border-0">
-                <div class="img-gradient crop-box-h390">
-                    <img src="{image-1}" class="card-img" alt="">
+<div class="col-md-6 col-lg-4">
+    <a class="d-block mx-auto portfolio-item crop-box-h360" href="#portfolio-modal-{news-id}" data-bs-toggle="modal">
+        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+            <div class="text-center text-white my-auto portfolio-item-caption-content w-100">
+                <i class="fa fa-search-plus fa-3x"></i>
+            </div>
+        </div>
+        <img class="img-thumbnail img-fluid bg-success border rounded-circle border-success shadow-none img-box-360" src="{image-1}">
+    </a>
+</div>
+
+
+{* модальное окно *}
+<div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-{news-id}">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <h2 class="text-uppercase text-secondary mb-0">{title}</h2>
+                            <hr class="star-dark mb-5">
+                            <div class="mb-5">
+                                {short-story}
+                            </div>
+                            {* <img class="img-fluid mb-5" src="{image-1}">
+                            <p class="mb-5">
+                                {short-story limit="400"}
+                            </p> *}
+
+                        </div>
+                    </div>
                 </div>
-                <a href="{full-link}" class="stretched-link text-white">
-                <div class="card-img-overlay-bottom">
-                    <p class="card-text text-uppercase">{category}</p>
-                    <h5 class="card-title">{title}</h5>
-                    <p class="card-text ">{short-story limit="200"}</p>
-                </div>
+            </div>
+            <div class="modal-footer pb-5">
+                <a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" href="{full-link}">
+                    &nbsp;Подробнее
                 </a>
             </div>
         </div>
-[/newscount]
-
-[not-newscount=1,8,15]
-<div class="card border-0  mb-2 col-12 col-sm-12 col-md-6 col-lg-3">
-    <a href="{full-link}" class="text-white">
-        <div class="crop-box-h195 bg-light">
-            <img src="{image-1}" class="card-img-top rounded-0" alt="">
-        </div> 
-    </a>
-    <div class="card-body mx-n4">
-        <p class="card-text text-uppercase text-secondary small">{category}</p>
-        <h5 class="card-title mt-n3">
-            <a href="{full-link}">{title}</a> 
-            [edit]<i class="fa fa-edit"></i>[/edit]
-        </h5>
-        <p class="card-text font-weight-light text-secondary font-12">{short-story limit="200"}</p>
     </div>
 </div>
-[/not-newscount]
-
-[newscount=6]
-    <div class="card border-secondary rounded-0 border-0 mb-2 col-12 col-sm-12 col-md-6 col-lg-3">
-        <a href="#" target="_blank">
-            <img src="{THEME}/images/b_300_390.jpg" alt="" class="img-fluid">
-        </a>
-    </div>
-[/newscount]
